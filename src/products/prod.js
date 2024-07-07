@@ -1,4 +1,22 @@
 import { nanoid } from 'nanoid';
+import appleWatch from '../assets/images/apple-watch.svg';
+import bag from '../assets/images/bag.svg';
+import belt from '../assets/images/belt.svg';
+import bracelet from '../assets/images/bracelet.svg';
+import cap from '../assets/images/cap.svg';
+import earpods from '../assets/images/earpods.svg';
+import gamepad from '../assets/images/gamepad.svg';
+import gdress from '../assets/images/gdress.svg';
+import heels from '../assets/images/heels.svg';
+import nativeWear from '../assets/images/native-wear.svg';
+import iphone from '../assets/images/iphone.svg';
+import laptop from '../assets/images/laptop.svg';
+import pdress from '../assets/images/pdress.svg';
+import powerbank from '../assets/images/powerbank.svg';
+import shirt from '../assets/images/shirt.svg';
+import shoe from '../assets/images/shoe.svg';
+import suit from '../assets/images/suit.svg';
+import sweater from '../assets/images/sweater.svg';
 
 const products = [
   {
@@ -9,6 +27,7 @@ const products = [
     favorite: false,
     price: 11250,
     category: 'tech',
+    img: gamepad,
   },
   {
     id: nanoid(),
@@ -18,6 +37,7 @@ const products = [
     favorite: false,
     price: 1450000,
     category: 'tech',
+    img: iphone,
   },
   {
     id: nanoid(),
@@ -27,6 +47,7 @@ const products = [
     favorite: true,
     price: 9170,
     category: 'tech',
+    img: appleWatch,
   },
   {
     id: nanoid(),
@@ -36,6 +57,7 @@ const products = [
     favorite: false,
     price: 17660,
     category: 'tech',
+    img: earpods,
   },
   {
     id: nanoid(),
@@ -45,6 +67,7 @@ const products = [
     favorite: false,
     price: 1300000,
     category: 'tech',
+    img: laptop,
   },
   {
     id: nanoid(),
@@ -54,6 +77,7 @@ const products = [
     favorite: false,
     price: 19999,
     category: 'tech',
+    img: powerbank,
   },
   // * MEN
   {
@@ -64,6 +88,7 @@ const products = [
     favorite: false,
     price: 17500,
     category: 'tech',
+    img: belt,
   },
   {
     id: nanoid(),
@@ -73,6 +98,7 @@ const products = [
     favorite: false,
     price: 4000,
     category: 'men',
+    img: cap,
   },
   {
     id: nanoid(),
@@ -82,6 +108,7 @@ const products = [
     favorite: false,
     price: 21000,
     category: 'men',
+    img: shoe,
   },
   {
     id: nanoid(),
@@ -91,6 +118,7 @@ const products = [
     favorite: false,
     price: 25900,
     category: 'men',
+    img: shirt,
   },
   {
     id: nanoid(),
@@ -100,6 +128,7 @@ const products = [
     favorite: false,
     price: 65990,
     category: 'men',
+    img: suit,
   },
   {
     id: nanoid(),
@@ -109,6 +138,7 @@ const products = [
     favorite: false,
     price: 85000,
     category: 'men',
+    img: nativeWear,
   },
   // * WOMEN
   {
@@ -119,6 +149,7 @@ const products = [
     favorite: false,
     price: 20950,
     category: 'women',
+    img: bag,
   },
   {
     id: nanoid(),
@@ -128,6 +159,7 @@ const products = [
     favorite: false,
     price: 10000,
     category: 'women',
+    img: pdress,
   },
   {
     id: nanoid(),
@@ -137,6 +169,7 @@ const products = [
     favorite: false,
     price: 3234,
     category: 'women',
+    img: bracelet,
   },
   {
     id: nanoid(),
@@ -146,6 +179,7 @@ const products = [
     favorite: false,
     price: 10500,
     category: 'women',
+    img: gdress,
   },
   {
     id: nanoid(),
@@ -155,6 +189,7 @@ const products = [
     favorite: false,
     price: 9500,
     category: 'women',
+    img: sweater,
   },
   {
     id: nanoid(),
@@ -164,6 +199,7 @@ const products = [
     favorite: false,
     price: 32000,
     category: 'women',
+    img: heels,
   },
 ];
 
