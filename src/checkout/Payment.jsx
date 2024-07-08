@@ -1,10 +1,17 @@
 import { useRef, useState } from 'react';
 import card from '../assets/images/card.svg';
+import blackcard from '../assets/images/blackcard.svg';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import { clearCart } from '../cart/cartSlice';
+import { FaArrowLeftLong } from 'react-icons/fa6';
 
-function Payment({ setIsSuccessful }) {
+function Payment({
+  setIsSuccessful,
+  isHidden,
+  onHandleIsMobile,
+  isMobilePayment,
+}) {
   const [cardNumber, setCardNumber] = useState('');
   const [expiryDate, setExpiryDate] = useState('');
   const [cvv, setCvv] = useState('');
@@ -62,16 +69,34 @@ function Payment({ setIsSuccessful }) {
       expiryDate.length === 5 &&
       cvv.length === 3
     ) {
+      if (isMobilePayment) {
+        onHandleIsMobile();
+      }
+      dispatch(clearCart());
       setIsSuccessful(true);
-      dispatch(clearCart);
     } else {
       toast.error('please dummy card details');
     }
   };
   return (
-    <div className='hidden bg-dark md:flex md:flex-col text-light rounded p-8 space-y-6'>
-      <h4 className='text-xl'>Payment</h4>
-      <img src={card} alt='card' />
+    <div
+      className={`${
+        isHidden === true ? 'hidden bg-dark text-light' : 'bg-white'
+      } bg-dark md:flex md:flex-col rounded p-8 space-y-6`}
+    >
+      {' '}
+      <div className='flex gap-4 items-center'>
+        {isHidden ? (
+          ''
+        ) : (
+          <button onClick={onHandleIsMobile}>
+            <FaArrowLeftLong />
+          </button>
+        )}
+
+        <h4 className='text-xl'>Payment</h4>
+      </div>
+      <img src={`${isHidden ? card : blackcard}`} alt='card' />
       <form className='space-y-4' onSubmit={handleSubmit}>
         <div className='capitalize flex flex-col gap-2'>
           <label htmlFor=''>card number</label>

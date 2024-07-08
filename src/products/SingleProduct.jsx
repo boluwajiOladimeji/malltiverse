@@ -7,8 +7,7 @@ import { addItem } from '../cart/cartSlice';
 
 function SingleProduct({ product }) {
   const dispatch = useDispatch();
-  const handleAddItem = (id) => {
-    console.log(product.id);
+  const handleAddItem = () => {
     const newItem = {
       id: product.id,
       name: product.name,

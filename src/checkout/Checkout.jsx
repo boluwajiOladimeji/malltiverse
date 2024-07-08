@@ -7,11 +7,45 @@ import { IoMdCheckmark } from 'react-icons/io';
 function Checkout() {
   const { cart } = useSelector((store) => store.cart);
   const [isSuccessful, setIsSuccessful] = useState(false);
-  // const [isMobilePayment, setIsMobilePayment] = useState(false);
+  const [isMobilePayment, setIsMobilePayment] = useState(false);
 
-  // if (isMobilePayment) {
-  //   return <Payment />;
-  // }
+  const handleIsMobile = () => {
+    setIsMobilePayment(false);
+  };
+
+  const submitToMobilePayment = (e) => {
+    e.preventDefault();
+    setIsMobilePayment(true);
+  };
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768 && isMobilePayment) {
+        setIsMobilePayment(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [isMobilePayment]);
+
+  if (isMobilePayment) {
+    return (
+      <div className='px-4'>
+        <div className='mx-auto max-w-6xl'>
+          <Payment
+            setIsSuccessful={setIsSuccessful}
+            onHandleIsMobile={handleIsMobile}
+            isMobilePayment={isMobilePayment}
+          />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -43,7 +77,10 @@ function Checkout() {
             </div>
             {/* Form & Payment */}
             <div className='py-4 md:grid md:grid-cols-2 md:gap-10'>
-              <form className='space-y-6 border border-dark rounded p-8'>
+              <form
+                className='space-y-6 border border-dark rounded p-8'
+                onSubmit={submitToMobilePayment}
+              >
                 <h3>
                   Select how to receive your package
                   {cart.length === 1 ? '' : 's'}
@@ -94,7 +131,7 @@ function Checkout() {
                 </button>
               </form>
               {/* Payment */}
-              <Payment setIsSuccessful={setIsSuccessful} />
+              <Payment setIsSuccessful={setIsSuccessful} isHidden={true} />
             </div>
           </div>
         </div>
