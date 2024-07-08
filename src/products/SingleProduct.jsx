@@ -45,7 +45,7 @@ function SingleProduct({ product }) {
         <p className='text-reddish mt-2'>{formatNumber(product.price)}</p>
       </div>
       <button
-        className='py-2 px-4 rounded-xl hover:bg-reddish border border-reddish text-xs'
+        className='py-2 px-4 rounded-xl hover:bg-reddish transition-all ease-in duration-300 border border-reddish text-xs'
         onClick={handleAddItem}
       >
         Add to Cart

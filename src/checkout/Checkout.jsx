@@ -88,13 +88,23 @@ function Checkout() {
                 <div className='form-control space-y-2'>
                   <h4 className='text-sm font-semibold'>Pickup</h4>
                   <div className='text-xs flex items-center gap-2 text-gray-600'>
-                    <input type='radio' name='location' id='secretariat' />
+                    <input
+                      type='radio'
+                      name='location'
+                      id='secretariat'
+                      required
+                    />
                     <label htmlFor='secretariat'>
                       Old Secretariat Complex Area 1,Garki Area 1 AMAC
                     </label>
                   </div>
                   <div className='text-xs flex items-center gap-2 text-gray-600'>
-                    <input type='radio' name='location' id='secretariat' />
+                    <input
+                      type='radio'
+                      name='location'
+                      id='secretariat'
+                      required
+                    />
                     <label htmlFor='secretariat'>
                       Sokoto street Area 1,Garki Area 1 AMAC
                     </label>
@@ -106,6 +116,7 @@ function Checkout() {
                     name='delivery'
                     id='delivery'
                     className='w-full min-h-12 border p-2 border-dark rounded'
+                    required
                   ></textarea>
                 </div>
                 <div className='space-y-2'>
@@ -115,6 +126,7 @@ function Checkout() {
                       type='tel'
                       className='border border-dark rounded p-2'
                       placeholder='phone nos1'
+                      required
                     />
                     <input
                       type='tel'
