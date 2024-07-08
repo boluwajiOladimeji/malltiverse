@@ -87,7 +87,7 @@ const products = [
     rating: 4,
     favorite: false,
     price: 17500,
-    category: 'tech',
+    category: 'men',
     img: belt,
   },
   {

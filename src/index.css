@@ -2,10 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  overflow-x: hidden;
+}
 .active {
   color: #ff7f7d;
 }
 
 .headerbg {
-  background-image: url('./assets/images/headphonesBg.svg');
+  background-image: url('./assets/images/mobileBg.svg');
+}
+.confetti {
+  background-image: url('./assets/images/confetti.svg');
+}
+
+@media screen and (min-width: 768px) {
+  .headerbg {
+    background-image: url('./assets/images/headphonesBg.svg');
+  }
 }

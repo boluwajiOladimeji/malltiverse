@@ -8,6 +8,8 @@ export default {
         reddish: '#FF7F7D',
         'light-gray': '#EDEDED',
         light: '#FAFAFA',
+        yello: '#FFC657',
+        dark: '#2A2A2A',
       },
     },
   },
