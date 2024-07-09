@@ -138,7 +138,7 @@ function Checkout() {
                   className='py-4 rounded-md capitalize w-4/6 text-xs bg-reddish px-4 md:hidden'
                   type='submit'
                 >
-                  submit
+                  Next
                 </button>
               </form>
               {/* Payment */}
