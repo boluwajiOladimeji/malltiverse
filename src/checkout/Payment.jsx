@@ -139,12 +139,18 @@ function Payment({
             />
           </div>
         </div>
-        <button
-          className='py-4 rounded-md capitalize text-xs bg-reddish px-4'
-          type='submit'
+        <div
+          className={`${!isHidden && 'flex justify-center sm:justify-start'}`}
         >
-          make payment
-        </button>
+          <button
+            className={`py-4 rounded-md capitalize text-xs bg-reddish px-4 ${
+              !isHidden && 'w-full max-w-sm mx-auto inline-block'
+            }`}
+            type='submit'
+          >
+            make payment
+          </button>
+        </div>
       </form>
     </div>
   );

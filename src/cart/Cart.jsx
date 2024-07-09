@@ -59,7 +59,7 @@ function Cart() {
                   type='text'
                   className='border py-3 px-1 border-light bg-transparent rounded-md flex-1 max-w-md'
                 />
-                <button className=' text-xs px-12 rounded-md capitalize bg-reddish'>
+                <button className=' text-xs px-8 rounded-md capitalize bg-reddish'>
                   apply
                 </button>
               </div>
