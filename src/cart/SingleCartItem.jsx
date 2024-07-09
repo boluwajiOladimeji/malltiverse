@@ -6,6 +6,7 @@ import {
   increaseItemQuantity,
 } from './cartSlice';
 import { formatNumber } from '../utils/helpers';
+import deleteBtn from '../assets/images/delete.svg';
 
 function SingleCartItem({ item }) {
   const dispatch = useDispatch();
@@ -27,7 +28,7 @@ function SingleCartItem({ item }) {
           <h3 className='text-dark'>{item.description}</h3>
           <div className='flex gap-4 items-center'>
             <button
-              className='h-6 w-6 border border-dark disabled:cursor-not-allowed'
+              className='h-6 w-6 border border-dark disabled:cursor-not-allowed hover:bg-reddish hover:text-light'
               onClick={handleDecreaseItem}
               disabled={item.quantity === 1}
             >
@@ -35,7 +36,7 @@ function SingleCartItem({ item }) {
             </button>
             <p>{item.quantity}</p>
             <button
-              className='h-6 w-6 border border-dark'
+              className='h-6 w-6 border border-dark hover:bg-reddish hover:text-light'
               onClick={handleIncreaseItem}
             >
               +
@@ -44,7 +45,8 @@ function SingleCartItem({ item }) {
         </div>
         <div className='ml-auto flex flex-col justify-between items-center '>
           <button onClick={handleDeleteItem}>
-            <RiDeleteBin5Line className='text-xl' />
+            {/* <RiDeleteBin5Line className='text-xl' /> */}
+            <img src={deleteBtn} alt='delete' />
           </button>
           <p>N{item.price}</p>
         </div>
@@ -61,7 +63,7 @@ function SingleCartItem({ item }) {
         <p>N{item.price}</p>
         <div className='flex gap-4 items-center'>
           <button
-            className='h-6 w-6 border border-dark disabled:cursor-not-allowed'
+            className='h-7 w-7 border border-dark disabled:cursor-not-allowed hover:bg-reddish hover:text-light'
             onClick={handleDecreaseItem}
             disabled={item.quantity === 1}
           >
@@ -69,7 +71,7 @@ function SingleCartItem({ item }) {
           </button>
           <p>{item.quantity}</p>
           <button
-            className='h-6 w-6 border border-dark'
+            className='h-7 w-7 border border-dark hover:bg-reddish hover:text-light'
             onClick={handleIncreaseItem}
           >
             +
@@ -77,7 +79,8 @@ function SingleCartItem({ item }) {
         </div>
         <p>N{formatNumber(item.totalPrice)}</p>
         <button className='ml-auto' onClick={handleDeleteItem}>
-          <RiDeleteBin5Line className='text-xl' />
+          {/* <RiDeleteBin5Line className='text-xl' /> */}
+          <img src={deleteBtn} alt='delete' />
         </button>
       </article>
     </div>

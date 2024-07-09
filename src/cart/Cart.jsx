@@ -10,9 +10,10 @@ import { Link } from 'react-router-dom';
 
 function Cart() {
   const { cart } = useSelector((store) => store.cart);
+  console.log(cart);
 
   return (
-    <div className='min-h-[calc(100vh-64px)] md:pb-8  flex flex-col'>
+    <div className='min-h-[calc(100vh-64px)] lg:pb-8  flex flex-col'>
       <div className='p-4 '>
         <div className='mx-auto max-w-6xl space-y-6'>
           <div className='flex justify-between items-center'>
@@ -24,12 +25,15 @@ function Cart() {
             </p>
           </div>
           <section>
-            <header className='hidden md:grid grid-cols-7 capitalize gap-4 mb-6'>
-              <p className='col-span-3'>products</p>
-              <p>price</p>
-              <p>quantity</p>
-              <p>total</p>
-            </header>
+            {cart.length > 1 && (
+              <header className='hidden md:grid grid-cols-7 capitalize gap-4 mb-6'>
+                <p className='col-span-3'>products</p>
+                <p>price</p>
+                <p>quantity</p>
+                <p>total</p>
+              </header>
+            )}
+
             {cart.length < 1 ? (
               <h2 className='text-center font-semibold text-2xl mt-48'>
                 No Item in Cart
@@ -53,9 +57,9 @@ function Cart() {
               <div className='flex gap-6 justify-between'>
                 <input
                   type='text'
-                  className='border py-3 px-1 border-light bg-transparent rounded-md'
+                  className='border py-3 px-1 border-light bg-transparent rounded-md flex-1 max-w-md'
                 />
-                <button className=' text-xs px-6 rounded-md capitalize bg-reddish'>
+                <button className=' text-xs px-12 rounded-md capitalize bg-reddish'>
                   apply
                 </button>
               </div>

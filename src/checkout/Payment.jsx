@@ -96,8 +96,12 @@ function Payment({
 
         <h4 className='text-xl'>Payment</h4>
       </div>
-      <img src={`${isHidden ? card : blackcard}`} alt='card' />
-      <form className='space-y-4' onSubmit={handleSubmit}>
+      <img
+        src={`${isHidden ? card : blackcard}`}
+        alt='card'
+        className='w-full max-w-lg'
+      />
+      <form className='space-y-6' onSubmit={handleSubmit}>
         <div className='capitalize flex flex-col gap-2'>
           <label htmlFor=''>card number</label>
           <input

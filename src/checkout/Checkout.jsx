@@ -35,7 +35,7 @@ function Checkout() {
 
   if (isMobilePayment) {
     return (
-      <div className='px-4'>
+      <div>
         <div className='mx-auto max-w-6xl'>
           <Payment
             setIsSuccessful={setIsSuccessful}
@@ -103,6 +103,7 @@ function Checkout() {
                       type='radio'
                       name='location'
                       id='secretariat'
+                      className='ring-reddish'
                       required
                     />
                     <label htmlFor='secretariat'>
@@ -116,7 +117,6 @@ function Checkout() {
                     name='delivery'
                     id='delivery'
                     className='w-full min-h-12 border p-2 border-dark rounded'
-                    required
                   ></textarea>
                 </div>
                 <div className='space-y-2'>
@@ -126,7 +126,6 @@ function Checkout() {
                       type='tel'
                       className='border border-dark rounded p-2'
                       placeholder='phone nos1'
-                      required
                     />
                     <input
                       type='tel'
