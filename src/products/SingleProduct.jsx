@@ -21,12 +21,8 @@ function SingleProduct({ product }) {
   };
   return (
     <article className='space-y-4' key={product.id}>
-      <div className='bg-light-gray flex justify-center py-6  h-40 border border-transparent hover:border-reddish rounded'>
-        <img
-          src={product.img}
-          alt={product.title}
-          className='w-4/5 lg:w-full'
-        />
+      <div className='bg-light-gray flex justify-center py-10  h-52 border border-transparent hover:border-reddish rounded'>
+        <img src={product.img} alt={product.title} className='w-3/5' />
       </div>
       <div className=''>
         <div className='space-y-1'>
