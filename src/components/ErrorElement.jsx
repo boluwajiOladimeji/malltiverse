@@ -3,9 +3,9 @@ import Nav from './Nav';
 
 function ErrorElement() {
   const error = useRouteError();
+  console.log(error);
   return (
     <div>
-      <Nav />
       <div className='min-h-[calc(100vh-64px)]  grid place-items-center'>
         <div className='text-center space-y-6'>
           <p className='text-6xl text-center'>😥</p>

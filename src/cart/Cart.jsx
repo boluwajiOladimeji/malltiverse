@@ -10,7 +10,6 @@ import { Link } from 'react-router-dom';
 
 function Cart() {
   const { cart } = useSelector((store) => store.cart);
-  console.log(cart);
 
   return (
     <div className='min-h-[calc(100vh-64px)] lg:pb-8  flex flex-col'>

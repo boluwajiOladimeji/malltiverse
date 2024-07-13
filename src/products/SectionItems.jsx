@@ -1,9 +1,30 @@
+import axios from 'axios';
 import Title from '../ui/Title';
-import products from './prod';
+// import products from './prod';
 
 import SingleProduct from './SingleProduct';
+import { useLoaderData } from 'react-router-dom';
+
+const url =
+  'api/products?organization_id=3095cc2970c74dd58f4bf6fd55647956&reverse_sort=false&page=1&size=20&Appid=G79PBOPHV9G8OK5&Apikey=6894802b04a447d7a5cefacfdf8fd1e120240712121351298521';
+
+export const loader = async () => {
+  const data = await axios(url);
+  const itemProducts = data.data.items;
+  const myProducts = itemProducts.map((item) => {
+    const { available_quantity: rating, description, name, photos, id } = item;
+    const price = item.current_price[0].NGN[0];
+    const img = `https://api.timbu.cloud/images/${item.photos[0].url}`;
+    const category = item.categories[0].name;
+
+    return { rating, description, name, price, photos, img, category, id };
+  });
+  return myProducts;
+};
 
 function SectionItems({ category, title }) {
+  const products = useLoaderData();
+
   const displayedProducts = products.filter(
     (product) => product.category === category
   );
@@ -13,54 +34,7 @@ function SectionItems({ category, title }) {
       <Title title={title} />
       <div className='grid grid-cols-2 md:grid-cols-3 md:gap-8 gap-4'>
         {displayedProducts.map((product) => {
-          return (
-            <SingleProduct product={product} key={product.id} />
-            // <article className='space-y-4' key={product.id}>
-            //   <div className='bg-light-gray flex justify-center py-12  h-48 border border-transparent hover:border-reddish relative'>
-            //     <img
-            //       src={product.img}
-            //       alt={product.title}
-            //       className='w-3/5 lg:w-full h-full'
-            //     />
-            //     <div className='h-8 w-8 rounded-full flex border border-dark items-center justify-center absolute top-4 right-4'>
-            //       {/* <img src={heart} alt='heart' /> */}
-            //       {product.favorite ? (
-            //         <FaHeart className='text-reddish' />
-            //       ) : (
-            //         <CiHeart className='text-dark text-xl' />
-            //       )}
-            //     </div>
-            //   </div>
-            //   <div className=''>
-            //     <div className='space-y-1'>
-            //       <h2 className='font-semibold text-xs lg:text-lg'>
-            //         {product.name}
-            //       </h2>
-            //       <h3 className='text-xs lg:text-sm min-h-9'>
-            //         {product.description}
-            //       </h3>
-            //       <div className='flex gap-1'>
-            //         {Array.from({ length: 5 }, (_, index) => {
-            //           return index + 1 <= product.rating ? (
-            //             <FaStar className='text-yello' key={index} />
-            //           ) : (
-            //             <FaRegStar className='text-yello' key={index} />
-            //           );
-            //         })}
-            //       </div>
-            //     </div>
-            //     <p className='text-reddish mt-2'>
-            //       {formatNumber(product.price)}
-            //     </p>
-            //   </div>
-            //   <button
-            //     className='py-2 px-4 rounded-xl hover:bg-reddish border border-reddish text-xs'
-            //     onClick={() => handleAddItem(product.id)}
-            //   >
-            //     Add to Cart
-            //   </button>
-            // </article>
-          );
+          return <SingleProduct product={product} key={product.id} />;
         })}
       </div>
     </div>
