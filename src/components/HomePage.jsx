@@ -11,7 +11,13 @@ const mainUrl =
 export const loader = async () => {
   const data = await axios(`${proxyUrl}${mainUrl}`);
   const itemProducts = data.data.items;
-  const myProducts = itemProducts.map((item) => {
+  return itemProducts;
+};
+
+function HomePage() {
+  const navigation = useNavigation();
+  const myProducts = useLoaderData();
+  const products = myProducts.map((item) => {
     const { available_quantity: rating, description, name, photos, id } = item;
     const price = item.current_price[0].NGN[0];
     const img = `https://api.timbu.cloud/images/${item.photos[0].url}`;
@@ -19,12 +25,6 @@ export const loader = async () => {
 
     return { rating, description, name, price, photos, img, category, id };
   });
-  return myProducts;
-};
-
-function HomePage() {
-  const navigation = useNavigation();
-  const products = useLoaderData();
   const isLoading = navigation.state === 'loading';
   return (
     <header>
