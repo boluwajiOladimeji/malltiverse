@@ -7,14 +7,15 @@ import {
   fullTotal,
 } from '../utils/helpers';
 import { Link } from 'react-router-dom';
-
+import Back from '../components/Back';
 function Cart() {
   const { cart } = useSelector((store) => store.cart);
 
   return (
     <div className='min-h-[calc(100vh-64px)] lg:pb-8  flex flex-col'>
       <div className='p-4 '>
-        <div className='mx-auto max-w-6xl space-y-6'>
+        <div className='mx-auto max-w-6xl space-y-5'>
+          <Back />
           <div className='flex justify-between items-center'>
             <h2 className='capitalize text-2xl md:text-3xl font-bold'>
               My shopping cart

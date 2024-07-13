@@ -1,5 +1,4 @@
 import Title from '../ui/Title';
-// import products from './prod';
 
 import SingleProduct from './SingleProduct';
 import { useOutletContext } from 'react-router-dom';

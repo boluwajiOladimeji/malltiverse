@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 const initialState = {
   // cart: [],
   cart: [],
+  
 };
 
 const getCartFromLocalStorage = () => {

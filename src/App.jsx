@@ -6,7 +6,9 @@ import Checkout from './checkout/Checkout';
 import ErrorElement from './components/ErrorElement';
 import { loader as productsLoader } from './components/HomePage';
 import { loader as productDetailLoader } from './products/ProductDetailsSingle';
+import { loader as allProductsLoader } from './products/AllProducts';
 import ProductDetailsSingle from './products/ProductDetailsSingle';
+import AllProducts from './products/AllProducts';
 
 const router = createBrowserRouter([
   {
@@ -21,7 +23,13 @@ const router = createBrowserRouter([
         errorElement: <ErrorElement />,
       },
       {
-        path: '/:productId',
+        path: '/products',
+        element: <AllProducts />,
+        errorElement: <ErrorElement />,
+        loader: allProductsLoader,
+      },
+      {
+        path: '/products/:productId',
         element: <ProductDetailsSingle />,
         loader: productDetailLoader,
         errorElement: <ErrorElement />,

@@ -2,7 +2,6 @@ import { Link, NavLink } from 'react-router-dom';
 import logo from '../assets/images/logo.svg';
 import { MdOutlineShoppingCartCheckout } from 'react-icons/md';
 import { CgShoppingCart } from 'react-icons/cg';
-import shoppingCart from '../assets/images/shopping-cart.svg';
 
 function Nav() {
   return (
@@ -13,10 +12,10 @@ function Nav() {
         </Link>
 
         <div className='capitalize flex items-center text-sm gap-4'>
-          <NavLink to={'/'}>product listing</NavLink>
+          <NavLink to={'/products?page=1&size=10'}>products</NavLink>
           <NavLink to={'/cart'}>
             {' '}
-            <span className=' md:hidden border border-dark h-8 grid place-items-center w-8 rounded-full'>
+            <span className=' md:hidden   h-8 grid place-items-center w-8'>
               <CgShoppingCart className=' text-xl' />
               {/* <img src={shoppingCart} alt='cart' /> */}
             </span>{' '}
@@ -24,7 +23,7 @@ function Nav() {
           </NavLink>
           <NavLink to={'/checkout'}>
             {' '}
-            <span className='md:hidden border border-dark h-8 grid place-items-center w-8 rounded-full'>
+            <span className='md:hidden h-8 grid place-items-center w-8'>
               <MdOutlineShoppingCartCheckout className='md:hidden text-xl' />
             </span>{' '}
             <span className='hidden md:flex'>Checkout</span>

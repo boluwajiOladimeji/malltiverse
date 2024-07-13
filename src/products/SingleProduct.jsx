@@ -24,13 +24,15 @@ function SingleProduct({ product }) {
 
   return (
     <article className='space-y-4' key={product.id}>
-      <div className='bg-light-gray flex justify-center py-10  h-52 border border-transparent hover:border-reddish rounded'>
-        <img
-          src={product.img}
-          alt={product.title}
-          className='w-3/5 object-contain'
-        />
-      </div>
+      <Link to={`/products/${product.id}`}>
+        <div className='bg-light-gray flex justify-center py-10  h-52 border border-transparent hover:border-reddish rounded'>
+          <img
+            src={product.img}
+            alt={product.title}
+            className='w-3/5 object-contain'
+          />
+        </div>
+      </Link>
       <div className=''>
         <div className='space-y-1'>
           <h2 className='font-semibold text-xs lg:text-lg'>{product.name}</h2>
@@ -51,12 +53,12 @@ function SingleProduct({ product }) {
       </div>
       <div className='flex justify-between gap-2 items-center'>
         <button
-          className='py-2 px-4 rounded-xl hover:bg-reddish transition-all ease-in duration-300 border border-reddish text-xs w-2/4 max-w-40'
+          className='py-2 px-4 rounded-xl hover:bg-reddish hover:text-white transition-all ease-in duration-300 border border-reddish text-xs  max-w-40'
           onClick={handleAddItem}
         >
           Add to Cart
         </button>
-        <Link className='' to={`/${product.id}`}>
+        <Link className='' to={`/products/${product.id}`}>
           <img src={detailsImg} className='w-8' alt='details' />
         </Link>
       </div>

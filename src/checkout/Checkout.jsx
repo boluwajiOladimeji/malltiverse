@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import Payment from './Payment';
 import { useEffect, useState } from 'react';
 import { IoMdCheckmark } from 'react-icons/io';
+import Back from '../components/Back';
 
 function Checkout() {
   const { cart } = useSelector((store) => store.cart);
@@ -37,6 +38,7 @@ function Checkout() {
     return (
       <div>
         <div className='mx-auto max-w-6xl'>
+          <Back />
           <Payment
             setIsSuccessful={setIsSuccessful}
             onHandleIsMobile={handleIsMobile}
@@ -66,7 +68,8 @@ function Checkout() {
         </div>
       ) : (
         <div className='p-4'>
-          <div className='mx-auto max-w-6xl relative'>
+          <div className='mx-auto max-w-6xl relative space-y-6'>
+            <Back />
             <div className='flex justify-between items-center'>
               <h2 className='capitalize text-2xl md:text-3xl font-bold'>
                 Checkout
