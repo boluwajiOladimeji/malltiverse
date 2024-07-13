@@ -4,12 +4,15 @@ import Nav from './Nav';
 import Loader from '../ui/Loader';
 import axios from 'axios';
 
-const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-const mainUrl =
-  'https://api.timbu.cloud/products?organization_id=3095cc2970c74dd58f4bf6fd55647956&reverse_sort=false&page=1&size=20&Appid=G79PBOPHV9G8OK5&Apikey=6894802b04a447d7a5cefacfdf8fd1e120240712121351298521';
+// const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+// const mainUrl =
+//   'https://api.timbu.cloud/products?organization_id=3095cc2970c74dd58f4bf6fd55647956&reverse_sort=false&page=1&size=20&Appid=G79PBOPHV9G8OK5&Apikey=6894802b04a447d7a5cefacfdf8fd1e120240712121351298521';
+
+const realUrl =
+  'https://timbu-get-all-products.reavdev.workers.dev/?organization_id=3095cc2970c74dd58f4bf6fd55647956&reverse_sort=false&page=1&size=20&Appid=G79PBOPHV9G8OK5&Apikey=6894802b04a447d7a5cefacfdf8fd1e120240712121351298521';
 
 export const loader = async () => {
-  const data = await axios(`${proxyUrl}${mainUrl}`);
+  const data = await axios(`${realUrl}`);
   const itemProducts = data.data.items;
   return itemProducts;
 };
