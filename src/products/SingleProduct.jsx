@@ -21,8 +21,6 @@ function SingleProduct({ product }) {
     dispatch(addItem(newItem));
   };
 
-  console.log(product.description.split('.')[0]);
-
   return (
     <article className='space-y-4' key={product.id}>
       <div className='bg-light-gray flex justify-center py-10  h-52 border border-transparent hover:border-reddish rounded'>
