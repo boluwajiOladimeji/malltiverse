@@ -32,6 +32,10 @@ function SectionItems({ category, title }) {
     (product) => product.category === category
   );
 
+  if (!displayedProducts) {
+    return <h1>Loading...</h1>;
+  }
+
   return (
     <div className='max-w-6xl mx-auto py-4'>
       <Title title={title} />
