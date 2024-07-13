@@ -5,11 +5,15 @@ import { useDispatch } from 'react-redux';
 import { addItem } from '../cart/cartSlice';
 import { useState } from 'react';
 
+const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+
+// const mainUrl =
+//   'https://api.timbu.cloud/products/${id}?organization_id=3095cc2970c74dd58f4bf6fd55647956&Appid=G79PBOPHV9G8OK5&Apikey=6894802b04a447d7a5cefacfdf8fd1e120240712121351298521';
+
 export const loader = async ({ params }) => {
   const id = params.productId;
-  const data = await axios(
-    `api/products/${id}?organization_id=3095cc2970c74dd58f4bf6fd55647956&Appid=G79PBOPHV9G8OK5&Apikey=6894802b04a447d7a5cefacfdf8fd1e120240712121351298521`
-  );
+  const mainUrl = `https://api.timbu.cloud/products/${id}?organization_id=3095cc2970c74dd58f4bf6fd55647956&Appid=G79PBOPHV9G8OK5&Apikey=6894802b04a447d7a5cefacfdf8fd1e120240712121351298521`;
+  const data = await axios(`${proxyUrl}${mainUrl}`);
 
   return { id, data };
 };

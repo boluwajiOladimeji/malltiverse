@@ -1,5 +1,5 @@
 import React from 'react';
-import Hero from './Hero';
+import Hero from './hero';
 import SectionItems from './SectionItems';
 import Footer from './Footer';
 
