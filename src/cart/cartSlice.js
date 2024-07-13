@@ -1,12 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
-import belt from '../assets/images/belt.svg';
-import { nanoid } from 'nanoid';
 import { toast } from 'react-toastify';
 
 const initialState = {
   // cart: [],
   cart: [],
-  
 };
 
 const getCartFromLocalStorage = () => {
