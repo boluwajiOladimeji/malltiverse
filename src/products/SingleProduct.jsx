@@ -50,15 +50,15 @@ function SingleProduct({ product }) {
         </div>
         <p className='text-reddish mt-2'>{formatNumber(product.price)}</p>
       </div>
-      <div className='space-x-6'>
+      <div className='flex justify-between gap-2 items-center'>
         <button
-          className='py-2 px-4 rounded-xl hover:bg-reddish transition-all ease-in duration-300 border border-reddish text-xs w-2/4'
+          className='py-2 px-4 rounded-xl hover:bg-reddish transition-all ease-in duration-300 border border-reddish text-xs w-2/4 max-w-40'
           onClick={handleAddItem}
         >
           Add to Cart
         </button>
         <Link
-          className='py-2 px-4 rounded-xl hover:bg-reddish transition-all ease-in duration-300 border border-reddish text-xs w-2/4'
+          className='py-2 px-4 rounded-xl hover:bg-reddish transition-all ease-in duration-300 border border-reddish text-xs w-2/4 text-center max-w-40'
           to={`/${product.id}`}
         >
           Details
