@@ -39,7 +39,7 @@ function ProductDetailsSingle() {
     return `https://api.timbu.cloud/images/${photo.url}`;
   });
   return (
-    <div className='px-4 py-8 md:py-24'>
+    <div className='px-4 py-8 md:py-10'>
       <div className='max-w-6xl mx-auto space-y-6'>
         <Back />
         <div className=' space-y-12 md:grid md:grid-cols-2 md:gap-12 md:space-y-0'>

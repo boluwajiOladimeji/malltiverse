@@ -32,7 +32,7 @@ function AllProducts() {
     const { available_quantity: rating, description, name, photos, id } = item;
     const price = item.current_price[0].NGN[0];
     const img = `https://api.timbu.cloud/images/${item.photos[0].url}`;
-    const category = item.categories[0].name;
+    const category = item?.categories[0]?.name;
 
     return { rating, description, name, price, photos, img, category, id };
   });
@@ -52,7 +52,7 @@ function AllProducts() {
       <div className='px-4 py-6'>
         <div className='max-w-6xl mx-auto space-y-6'>
           <Back />
-          <div className='space-y-16'>
+          <div className='space-y-12'>
             <section className='grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-4 gap-y-12'>
               {products.map((product) => {
                 return <SingleProduct product={product} key={product.id} />;
