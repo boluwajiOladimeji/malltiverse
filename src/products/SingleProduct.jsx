@@ -5,6 +5,7 @@ import { formatNumber } from '../utils/helpers';
 import { useDispatch } from 'react-redux';
 import { addItem } from '../cart/cartSlice';
 import { Link } from 'react-router-dom';
+import detailsImg from '../assets/images/details.png';
 
 function SingleProduct({ product }) {
   const dispatch = useDispatch();
@@ -55,11 +56,8 @@ function SingleProduct({ product }) {
         >
           Add to Cart
         </button>
-        <Link
-          className='py-2 px-4 rounded-xl hover:bg-reddish transition-all ease-in duration-300 border border-reddish text-xs w-2/4 text-center max-w-40'
-          to={`/${product.id}`}
-        >
-          Details
+        <Link className='' to={`/${product.id}`}>
+          <img src={detailsImg} className='w-8' alt='details' />
         </Link>
       </div>
     </article>
